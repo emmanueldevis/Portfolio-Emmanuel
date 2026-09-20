@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projets Emmanuel Devis – Portfolio</title>
+  <meta name="description" content="Les projets de Devis : sites web, communication numérique et idées de services pour les étudiants de Libreville.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="lien-evitement" href="#contenu">Aller au contenu principal</a>
+
+  <header class="site-header">
+    <div class="conteneur entete">
+      <a class="logo" href="index.html">Emmanuel Devis</a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">Menu</button>
+
+      <nav aria-label="Navigation principale">
+        <ul class="nav-liste" id="menu-principal">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#apropos">À propos</a></li>
+          <li><a href="index.html#competences">Compétences</a></li>
+          <li><a href="projects.html" aria-current="page">Projets</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu" tabindex="-1">
+
+    <section class="section entete-page" aria-labelledby="titre-projets">
+      <div class="conteneur">
+        <h1 id="titre-projets">Mes projets</h1>
+        <p class="chapeau">Sites, maquettes et idées de services construits pour répondre à des besoins concrets d'étudiants.</p>
+
+        <div class="filtres" role="group" aria-label="Filtrer les projets par catégorie">
+          <button type="button" class="filtre" data-filtre="tous" aria-pressed="true">Tous</button>
+          <button type="button" class="filtre" data-filtre="web" aria-pressed="false">Sites web</button>
+          <button type="button" class="filtre" data-filtre="communication" aria-pressed="false">Communication</button>
+          <button type="button" class="filtre" data-filtre="entrepreneuriat" aria-pressed="false">Entrepreneuriat</button>
+        </div>
+        <p class="compteur" id="compteur-projets" role="status">4 projets affichés</p>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-label="Liste des projets">
+      <div class="conteneur">
+        <ul class="grille-2 liste-cartes">
+
+          <li class="carte" data-categorie="communication">
+            <h2 class="titre-carte">Campus Digital 241</h2>
+            <p class="carte-etat">Projet scolaire</p>
+            <img class="carte-visuel" src="assets/images/projet-campus-digital-241.webp" width="900" height="400" loading="lazy" decoding="async" alt="Logo Campus Digital 241 et affiche de l'événement en ligne « Étudiants de Libreville ? Connectez-vous ! », publiés sur la page Facebook Digital Education 241">
+            <p>Création de la page Facebook « Digital Education 241 » et d'une campagne publicitaire destinées aux étudiants de Libreville : logo, publications et événement en ligne.</p>
+            <ul class="etiquettes">
+              <li>Facebook</li>
+              <li>Identité visuelle</li>
+              <li>Campagne publicitaire</li>
+            </ul>
+            <details>
+              <summary>Ce que j'ai travaillé</summary>
+              <p>Le concept de la page, son logo, les publications et l'événement en ligne pour atteindre les étudiants.</p>
+            </details>
+          </li>
+
+          <li class="carte" data-categorie="web">
+            <h2 class="titre-carte">Gestion des étudiants</h2>
+            <p class="carte-etat">Conception</p>
+            <p>Site de gestion des notes et des emplois du temps, pensé pour qu'un étudiant retrouve ses informations en quelques clics.</p>
+            <ul class="etiquettes">
+              <li>Wireframe</li>
+              <li>UX</li>
+            </ul>
+            <details>
+              <summary>Ce que j'ai travaillé</summary>
+              <p>Le découpage des pages (notes, emploi du temps, profil) et le wireframe des écrans principaux. Mais pas de contenu disponible pour ce projet</p>
+            </details>
+          </li>
+
+          <li class="carte" data-categorie="web">
+            <h2 class="titre-carte">NengWeb</h2>
+            <p class="carte-etat">Site vitrine</p>
+            <img class="carte-visuel" src="assets/images/projet-nengweb.webp" width="900" height="400" loading="lazy" decoding="async" alt="Trois écrans mobiles du site NengWeb : accueil en mode clair, accueil en mode sombre et présentation des pôles INOVIX et GAMA">
+            <p>Site vitrine pour une marque de services numériques, organisé en trois pôles : INOVIX, GAMA et AGA ANIMAJON. Il existe en mode clair et en mode sombre.</p>
+            <ul class="etiquettes">
+              <li>Figma</li>
+              <li>Site vitrine</li>
+              <li>Mode sombre</li>
+            </ul>
+            <details>
+              <summary>Ce que j'ai travaillé</summary>
+              <p>La structure du site, la présentation de chaque pôle de services et les deux thèmes, clair et sombre.</p>
+            </details>
+          </li>
+
+          <li class="carte" data-categorie="entrepreneuriat">
+            <h2 class="titre-carte">Transport étudiant à Libreville</h2>
+            <p class="carte-etat">Concept</p>
+            <p>Idée d'un service de transport pour les étudiants, avec planification des trajets, identité de marque et présence sur le web.</p>
+            <ul class="etiquettes">
+              <li>Planification</li>
+              <li>Identité de marque</li>
+            </ul>
+            <details>
+              <summary>Ce que j'ai travaillé</summary>
+              <p>Le fonctionnement du service, son nom et son image, puis l'idée d'un site pour le présenter. Pas de visuel pour ce site</p>
+            </details>
+          </li>
+
+        </ul>
+        <p class="suite"><a class="bouton" href="index.html#contact">Discuter d'un projet</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="conteneur">
+      <p>© <span id="annee">2026</span> Emmanuel Devis, Libreville, Gabon.</p>
+      <p>Site écoconçu : images compressées, polices du système, une seule feuille de style.</p>
+    </div>
+  </footer>
+</body>
+</html>

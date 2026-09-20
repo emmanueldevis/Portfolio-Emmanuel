@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emmanuel Devis – Portfolio</title>
+  <meta name="description" content="Portfolio de Devis, étudiant à Libreville : projets web, compétences et formulaire de contact.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="lien-evitement" href="#contenu">Aller au contenu principal</a>
+
+  <header class="site-header">
+    <div class="conteneur entete">
+      <a class="logo" href="index.html">Emmanuel Devis</a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">Menu</button>
+
+      <nav aria-label="Navigation principale">
+        <ul class="nav-liste" id="menu-principal">
+          <li><a href="index.html" data-section="accueil" aria-current="page">Accueil</a></li>
+          <li><a href="index.html#apropos" data-section="apropos">À propos</a></li>
+          <li><a href="index.html#competences" data-section="competences">Compétences</a></li>
+          <li><a href="projects.html">Projets</a></li>
+          <li><a href="index.html#contact" data-section="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu" tabindex="-1">
+
+    <section class="hero" id="accueil" aria-labelledby="titre-hero">
+      <div class="conteneur hero-grille">
+        <div class="hero-texte">
+          <h1 id="titre-hero">Je suis OBIANG OBIANG Emmanuel, étudiant au Gabon précisément à Libreville. Ayant des compétences pour le markéting digital, actuellement dans l'apprentissage de la conception de site web , légers et accessibles.</h1>
+          <p class="chapeau">Entre mes cours d'économie, de droit, de comptabilité et de statistiques, je construis des outils web pour les étudiants.</p>
+          <div class="actions">
+            <a class="bouton" href="projects.html">Voir mes projets</a>
+            <a class="bouton bouton-secondaire" href="#contact">Me contacter</a>
+          </div>
+        </div>
+
+        <aside class="fiche" aria-label="Profil en bref">
+          <div class="fiche-initiale" aria-hidden="true">D</div>
+          <dl>
+            <dt>Études</dt>
+            <dd>Université Omar Bongo et INPTIC, Libreville</dd>
+            <dt>Domaines</dt>
+            <dd>Économie, droit, comptabilité, statistiques</dd>
+            <dt>J'apprends</dt>
+            <dd>HTML, CSS, JavaScript et Figma</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="apropos" aria-labelledby="titre-apropos">
+      <div class="conteneur">
+        <h2 id="titre-apropos">À propos</h2>
+        <div class="apropos-grille">
+          <img class="photo-profil" src="assets/images/devis-portrait.webp" width="400" height="400" loading="lazy" decoding="async" alt="Portrait d'Emmanuel, en chemise blanche à col imprimé, portant des lunettes">
+          <div class="texte-long">
+            <p>Je vis à Libreville, au Gabon, et j'étudie l'économie, le droit, la comptabilité et les statistiques. Le web est devenu mon terrain d'apprentissage pour construire des outils utiles aux étudiants : gestion des notes, transport, communication.</p>
+            <p>En parallèle, j'apprends le HTML, le CSS et le JavaScript. J'essaie de faire des sites simples, rapides à charger et lisibles, y compris avec une connexion limitée.</p>
+            <p><a class="bouton" href="#contact">Me contacter</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="competences" aria-labelledby="titre-competences">
+      <div class="conteneur">
+        <h2 id="titre-competences">Compétences</h2>
+        <div class="grille-2">
+
+          <div class="bloc">
+            <h3>Développement web</h3>
+            <ul class="niveaux">
+              <li>
+                <span class="niveau-nom">HTML5 sémantique</span>
+                <span class="niveau-texte">Bon</span>
+                <span class="barre" aria-hidden="true"><span style="--niveau: 75%"></span></span>
+              </li>
+              <li>
+                <span class="niveau-nom">CSS3 et responsive</span>
+                <span class="niveau-texte">Bon</span>
+                <span class="barre" aria-hidden="true"><span style="--niveau: 70%"></span></span>
+              </li>
+              <li>
+                <span class="niveau-nom">JavaScript</span>
+                <span class="niveau-texte">En progrès</span>
+                <span class="barre" aria-hidden="true"><span style="--niveau: 50%"></span></span>
+              </li>
+              <li>
+                <span class="niveau-nom">Figma (maquettes)</span>
+                <span class="niveau-texte">Bon</span>
+                <span class="barre" aria-hidden="true"><span style="--niveau: 65%"></span></span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bloc">
+            <h3>Études et analyse</h3>
+            <ul class="niveaux">
+              <li>
+                <span class="niveau-nom">Économie</span>
+                <span class="niveau-texte">Solide</span>
+                <span class="barre" aria-hidden="true"><span style="--niveau: 85%"></span></span>
+              </li>
+              <li>
+                <span class="niveau-nom">Comptabilité</span>
+                <span class="niveau-texte">Solide</span>
+                <span class="barre" aria-hidden="true"><span style="--niveau: 80%"></span></span>
+              </li>
+              <li>
+                <span class="niveau-nom">Statistiques</span>
+                <span class="niveau-texte">Bon</span>
+                <span class="barre" aria-hidden="true"><span style="--niveau: 75%"></span></span>
+              </li>
+              <li>
+                <span class="niveau-nom">Droit</span>
+                <span class="niveau-texte">Bon</span>
+                <span class="barre" aria-hidden="true"><span style="--niveau: 65%"></span></span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="apercu-projets" aria-labelledby="titre-apercu">
+      <div class="conteneur">
+        <h2 id="titre-apercu">Mes projets récents</h2>
+        <ul class="grille-3 liste-cartes">
+          <li class="carte">
+            <h3>Campus Digital 241</h3>
+            <p>Page Facebook et campagne publicitaire pensées pour les étudiants de Libreville.</p>
+            <p class="carte-etat">Projet scolaire</p>
+          </li>
+          <li class="carte">
+            <h3>Gestion des étudiants</h3>
+            <p>Site de suivi des notes et des emplois du temps, dont j'ai préparé le wireframe.</p>
+            <p class="carte-etat">Conception</p>
+          </li>
+          <li class="carte">
+            <h3>NengWeb</h3>
+            <p>Site vitrine de services numériques avec trois pôles, maquetté sur Figma.</p>
+            <p class="carte-etat">Maquettes</p>
+          </li>
+        </ul>
+        <p class="suite"><a class="bouton" href="projects.html">Voir tous les projets</a></p>
+      </div>
+    </section>
+
+    <section class="section section-sombre" id="contact" aria-labelledby="titre-contact">
+      <div class="conteneur conteneur-etroit">
+        <h2 id="titre-contact">Un projet en tête ? Écrivez-moi.</h2>
+        <p class="chapeau">Tous les champs sont obligatoires.</p>
+
+        <form id="form-contact" novalidate>
+          <div class="champ">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" autocomplete="name" required aria-describedby="err-nom">
+            <p class="erreur" id="err-nom"></p>
+          </div>
+
+          <div class="champ">
+            <label for="email">Adresse e-mail</label>
+            <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="err-email">
+            <p class="erreur" id="err-email"></p>
+          </div>
+
+          <div class="champ">
+            <label for="sujet">Sujet</label>
+            <select id="sujet" name="sujet" required aria-describedby="err-sujet">
+              <option value="">Choisissez un sujet</option>
+              <option value="projet-web">Un projet de site web</option>
+              <option value="collaboration">Une collaboration ou un stage</option>
+              <option value="autre">Autre</option>
+            </select>
+            <p class="erreur" id="err-sujet"></p>
+          </div>
+
+          <div class="champ">
+            <label for="message">Message (20 caractères minimum)</label>
+            <textarea id="message" name="message" rows="6" required aria-describedby="err-message"></textarea>
+            <p class="erreur" id="err-message"></p>
+          </div>
+
+          <button class="bouton bouton-clair" type="submit">Envoyer le message</button>
+          <p class="statut" id="form-statut" role="status" tabindex="-1"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="conteneur">
+      <p>© <span id="annee">2026</span> Emmanuel Devis, Libreville, Gabon.</p>
+      <p>Site écoconçu : images compressées, polices du système, une seule feuille de style.</p>
+    </div>
+  </footer>
+</body>
+</html>
