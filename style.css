@@ -1,0 +1,662 @@
+
+:root {
+  --foret: #0e3b2e;
+  --foret-fonce: #09291f;
+  --papier: #f3f6f2;
+  --brume: #e2ebe4;
+  --bordure: #c3d3c8;
+  --encre: #1a2320;
+  --discret: #45554d;
+  --feuille: #0b6b4f;
+  --soleil: #f0b323;
+  --blanc: #ffffff;
+  --erreur-clair: #ffb4ab;
+
+  --rayon: 6px;
+  --police-texte: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --police-titre: Georgia, "Times New Roman", serif;
+}
+
+/* ---------- 2. Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--encre);
+  font-family: var(--police-texte);
+  font-size: 1.0625rem; /* 17px */
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--police-titre);
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+h1 {
+  font-size: clamp(1.9rem, 5vw, 3rem);
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--feuille);
+}
+
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:focus-visible {
+  outline: 3px solid var(--foret);
+  outline-offset: 3px;
+}
+
+.section-sombre :focus-visible {
+  outline-color: var(--soleil);
+}
+
+main:focus {
+  outline: none;
+}
+
+/* ---------- 3. Utilitaires de mise en page ---------- */
+.conteneur {
+  width: 100%;
+  max-width: 68rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.conteneur-etroit {
+  max-width: 44rem;
+}
+
+.section {
+  padding-block: 3.5rem;
+}
+
+.section-alt {
+  background: var(--brume);
+}
+
+.section-sombre {
+  background: var(--foret);
+  color: var(--papier);
+}
+
+.entete-page {
+  padding-bottom: 1.5rem;
+}
+
+.chapeau {
+  font-size: 1.15rem;
+  max-width: 60ch;
+  color: var(--discret);
+}
+
+.section-sombre .chapeau {
+  color: var(--brume);
+}
+
+.texte-long {
+  max-width: 62ch;
+}
+
+.suite {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+/* ---------- 4. Lien d'évitement ---------- */
+.lien-evitement {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 20;
+  padding: 0.75rem 1rem;
+  background: var(--foret);
+  color: var(--blanc);
+  border-radius: var(--rayon);
+}
+
+.lien-evitement:focus {
+  top: 1rem;
+}
+
+/* ---------- 5. En-tête et navigation ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--papier);
+  border-bottom: 1px solid var(--bordure);
+}
+
+.entete {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding-block: 0.6rem;
+}
+
+.logo {
+  font-family: var(--police-titre);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--foret);
+  text-decoration: none;
+}
+
+.site-header nav {
+  flex-basis: 100%;
+}
+
+.nav-liste {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-liste a {
+  display: block;
+  padding: 0.5rem 0.1rem;
+  border-bottom: 3px solid transparent;
+  color: var(--encre);
+  text-decoration: none;
+}
+
+.nav-liste a:hover {
+  border-bottom-color: var(--bordure);
+}
+
+.nav-liste a[aria-current] {
+  border-bottom-color: var(--feuille);
+  font-weight: 600;
+}
+
+/* Le bouton "Menu" n'existe que si JavaScript est actif (classe .js-menu) */
+.menu-toggle {
+  display: none;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--foret);
+  border-radius: var(--rayon);
+  background: transparent;
+  color: var(--foret);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.site-header.js-menu .menu-toggle {
+  display: inline-block;
+}
+
+.site-header.js-menu .nav-liste {
+  display: none;
+  flex-direction: column;
+  padding-bottom: 0.5rem;
+}
+
+.site-header.js-menu .nav-liste.ouvert {
+  display: flex;
+}
+
+/* ---------- 6. Boutons ---------- */
+.bouton {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid var(--foret);
+  border-radius: var(--rayon);
+  background: var(--foret);
+  color: var(--blanc);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bouton:hover {
+  background: var(--feuille);
+  border-color: var(--feuille);
+}
+
+.bouton-secondaire {
+  background: transparent;
+  color: var(--foret);
+}
+
+.bouton-secondaire:hover {
+  background: var(--brume);
+  border-color: var(--foret);
+}
+
+.bouton-clair {
+  background: var(--soleil);
+  border-color: var(--soleil);
+  color: var(--encre);
+}
+
+.bouton-clair:hover {
+  background: var(--blanc);
+  border-color: var(--blanc);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+/* ---------- 7. Hero ---------- */
+.hero {
+  padding-block: 3rem;
+}
+
+.hero-grille {
+  display: grid;
+  gap: 2rem;
+}
+
+.hero h1 {
+  max-width: 22ch;
+}
+
+.fiche {
+  padding: 1.5rem;
+  border-radius: var(--rayon);
+  background: var(--foret);
+  color: var(--papier);
+}
+
+.fiche-initiale {
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-bottom: 1.25rem;
+  border-radius: 50%;
+  background: var(--soleil);
+  color: var(--foret);
+  font-family: var(--police-titre);
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.fiche dl {
+  margin: 0;
+}
+
+.fiche dt {
+  font-weight: 700;
+  color: var(--soleil);
+}
+
+.fiche dd {
+  margin: 0 0 1rem;
+}
+
+.fiche dd:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- 8. Grilles et cartes ---------- */
+.grille-2,
+.grille-3 {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.liste-cartes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Page Projets : chaque carte garde sa propre hauteur (certaines ont une image, d'autres non) */
+.grille-2.liste-cartes {
+  align-items: start;
+}
+
+.carte,
+.bloc {
+  padding: 1.25rem;
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  background: var(--blanc);
+}
+
+.carte {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-left: 5px solid var(--feuille);
+}
+
+.carte p,
+.carte h2,
+.carte h3 {
+  margin: 0;
+}
+
+.titre-carte {
+  font-size: 1.25rem;
+}
+
+.carte-etat {
+  color: var(--discret);
+  font-weight: 600;
+}
+
+.etiquettes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.25rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.etiquettes li {
+  padding: 0.1rem 0.6rem;
+  border: 1px solid var(--bordure);
+  border-radius: 99px;
+  background: var(--papier);
+}
+
+.carte details {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.carte summary {
+  color: var(--feuille);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.carte details p {
+  margin-top: 0.5rem;
+}
+
+/* ---------- 8b. Images ---------- */
+.carte-visuel {
+  display: block;
+  width: 100%;
+  height: auto; /* width/height dans le HTML réservent la place : pas de saut de mise en page */
+  margin: 0.25rem 0;
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+}
+
+.apropos-grille {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: start;
+}
+
+.photo-profil {
+  width: 10rem;
+  height: 10rem;
+  border: 4px solid var(--feuille);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ---------- 9. Compétences ---------- */
+.niveaux {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.niveaux li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.25rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.niveaux li:last-child {
+  margin-bottom: 0;
+}
+
+.niveau-texte {
+  color: var(--discret);
+}
+
+.barre {
+  grid-column: 1 / -1;
+  height: 0.5rem;
+  border-radius: 99px;
+  background: var(--brume);
+  overflow: hidden;
+}
+
+.barre span {
+  display: block;
+  width: var(--niveau);
+  height: 100%;
+  background: var(--feuille);
+}
+
+/* ---------- 10. Filtres (page Projets) ---------- */
+.filtres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.filtre {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--foret);
+  border-radius: 99px;
+  background: transparent;
+  color: var(--foret);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filtre[aria-pressed="true"] {
+  background: var(--foret);
+  color: var(--blanc);
+}
+
+.compteur {
+  margin: 1rem 0 0;
+  color: var(--discret);
+}
+
+/* ---------- 11. Formulaire de contact ---------- */
+.champ {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: 2px solid var(--bordure);
+  border-radius: var(--rayon);
+  background: var(--blanc);
+  color: var(--encre);
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--erreur-clair);
+  border-width: 3px;
+}
+
+.erreur {
+  margin: 0.35rem 0 0;
+  color: var(--erreur-clair);
+  font-weight: 600;
+}
+
+.erreur:empty {
+  display: none;
+}
+
+.statut {
+  margin: 1.25rem 0 0;
+  padding: 1rem;
+  border-radius: var(--rayon);
+  background: var(--brume);
+  color: var(--foret);
+  font-weight: 600;
+}
+
+.statut:empty {
+  display: none;
+}
+
+/* ---------- 12. Pied de page ---------- */
+.site-footer {
+  padding-block: 2rem;
+  background: var(--foret-fonce);
+  color: var(--brume);
+}
+
+.site-footer p {
+  margin: 0 0 0.25rem;
+}
+
+/* ==========================================================
+   BREAKPOINT 1 : tablette (768px et plus)
+   ========================================================== */
+@media (min-width: 768px) {
+  .conteneur {
+    padding-inline: 2rem;
+  }
+
+  .section {
+    padding-block: 5rem;
+  }
+
+  .hero {
+    padding-block: 5rem;
+  }
+
+  .hero-grille {
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  /* Menu horizontal : on masque le bouton et on réaffiche la liste */
+  .site-header.js-menu .menu-toggle {
+    display: none;
+  }
+
+  .site-header.js-menu .nav-liste {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 0;
+  }
+
+  .site-header nav {
+    flex-basis: auto;
+  }
+
+  .grille-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .apropos-grille {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  /* Le portrait est le premier élément dans le HTML (visible en premier sur mobile),
+     mais il passe à droite du texte à partir de 768px */
+  .photo-profil {
+    grid-column: 2;
+    grid-row: 1;
+    width: 13rem;
+    height: 13rem;
+  }
+
+  .apropos-grille .texte-long {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .grille-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* ==========================================================
+   BREAKPOINT 2 : grand écran (1024px et plus)
+   ========================================================== */
+@media (min-width: 1024px) {
+  .hero-grille {
+    gap: 5rem;
+  }
+
+  .grille-3 {
+    gap: 1.5rem;
+  }
+
+  .carte,
+  .bloc {
+    padding: 1.5rem;
+  }
+}
